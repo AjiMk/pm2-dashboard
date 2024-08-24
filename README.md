@@ -28,4 +28,4 @@ Contributions are welcome! Please read the [CONTRIBUTING.md](CONTRIBUTING.md) fi
 
 This project is licensed under the  
 
- MIT License - see the [LICENSE.md](LICENSE.md) file for details.  
+ MIT License - see the [LICENSE.md](LICENSE) file for details.  
