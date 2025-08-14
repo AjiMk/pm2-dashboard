@@ -47,14 +47,14 @@ export function ProfileForm() {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow">
-      <div className="px-6 py-4 border-b border-gray-200">
+    <div className="bg-white dark:bg-gray-800 rounded-lg shadow">
+      <div className="px-6 py-4 border-b border-gray-200 dark:border-gray-700">
         <div className="flex items-center justify-between">
-          <h3 className="text-lg font-medium text-gray-900">Profile Information</h3>
+          <h3 className="text-lg font-medium text-gray-900 dark:text-white">Profile Information</h3>
           {!isEditing ? (
             <button
               onClick={handleEdit}
-              className="inline-flex items-center px-3 py-2 border border-gray-300 text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"
+              className="inline-flex items-center px-3 py-2 border border-gray-300 dark:border-gray-600 text-sm leading-4 font-medium rounded-md text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
             >
               <Edit className="h-4 w-4 mr-2" />
               Edit Profile
@@ -70,7 +70,7 @@ export function ProfileForm() {
               </button>
               <button
                 onClick={handleCancel}
-                className="inline-flex items-center px-3 py-2 border border-gray-300 text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"
+                className="inline-flex items-center px-3 py-2 border border-gray-300 dark:border-gray-600 text-sm leading-4 font-medium rounded-md text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
               >
                 <X className="h-4 w-4 mr-2" />
                 Cancel
@@ -87,14 +87,14 @@ export function ProfileForm() {
             <User className="h-12 w-12 text-white" />
           </div>
           <div>
-            <h4 className="text-lg font-medium text-gray-900">
+            <h4 className="text-lg font-medium text-gray-900 dark:text-white">
               {isEditing ? tempProfile.firstName + ' ' + tempProfile.lastName : profile.firstName + ' ' + profile.lastName}
             </h4>
-            <p className="text-gray-500">
+            <p className="text-gray-500 dark:text-gray-400">
               {isEditing ? tempProfile.position : profile.position} at {isEditing ? tempProfile.company : profile.company}
             </p>
             {isEditing && (
-              <button className="mt-2 text-sm text-indigo-600 hover:text-indigo-500">
+              <button className="mt-2 text-sm text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300">
                 Change photo
               </button>
             )}
@@ -103,71 +103,71 @@ export function ProfileForm() {
 
         {/* Personal Information */}
         <div>
-          <h4 className="text-sm font-medium text-gray-900 mb-4">Personal Information</h4>
+          <h4 className="text-sm font-medium text-gray-900 dark:text-white mb-4">Personal Information</h4>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700">First Name</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">First Name</label>
               <input
                 type="text"
                 value={isEditing ? tempProfile.firstName : profile.firstName}
                 onChange={(e) => handleChange('firstName', e.target.value)}
                 disabled={!isEditing}
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:bg-gray-100 disabled:text-gray-500"
+                className="mt-1 block w-full border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:bg-gray-100 dark:disabled:bg-gray-700 disabled:text-gray-500 dark:disabled:text-gray-400 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
               />
             </div>
             
             <div>
-              <label className="block text-sm font-medium text-gray-700">Last Name</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Last Name</label>
               <input
                 type="text"
                 value={isEditing ? tempProfile.lastName : profile.lastName}
                 onChange={(e) => handleChange('lastName', e.target.value)}
                 disabled={!isEditing}
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:bg-gray-100 disabled:text-gray-500"
+                className="mt-1 block w-full border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:bg-gray-100 dark:disabled:bg-gray-700 disabled:text-gray-500 dark:disabled:text-gray-400 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
               />
             </div>
             
             <div>
-              <label className="block text-sm font-medium text-gray-700">Email</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
               <input
                 type="email"
                 value={isEditing ? tempProfile.email : profile.email}
                 onChange={(e) => handleChange('email', e.target.value)}
                 disabled={!isEditing}
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:bg-gray-100 disabled:text-gray-500"
+                className="mt-1 block w-full border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:bg-gray-100 dark:disabled:bg-gray-700 disabled:text-gray-500 dark:disabled:text-gray-400 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
               />
             </div>
             
             <div>
-              <label className="block text-sm font-medium text-gray-700">Phone</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Phone</label>
               <input
                 type="tel"
                 value={isEditing ? tempProfile.phone : profile.phone}
                 onChange={(e) => handleChange('phone', e.target.value)}
                 disabled={!isEditing}
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:bg-gray-100 disabled:text-gray-500"
+                className="mt-1 block w-full border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:bg-gray-100 dark:disabled:bg-gray-700 disabled:text-gray-500 dark:disabled:text-gray-400 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
               />
             </div>
             
             <div>
-              <label className="block text-sm font-medium text-gray-700">Location</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Location</label>
               <input
                 type="text"
                 value={isEditing ? tempProfile.location : profile.location}
                 onChange={(e) => handleChange('location', e.target.value)}
                 disabled={!isEditing}
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:bg-gray-100 disabled:text-gray-500"
+                className="mt-1 block w-full border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:bg-gray-100 dark:disabled:bg-gray-700 disabled:text-gray-500 dark:disabled:text-gray-400 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
               />
             </div>
             
             <div>
-              <label className="block text-sm font-medium text-gray-700">Birthday</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Birthday</label>
               <input
                 type="date"
                 value={isEditing ? tempProfile.birthday : profile.birthday}
                 onChange={(e) => handleChange('birthday', e.target.value)}
                 disabled={!isEditing}
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:bg-gray-100 disabled:text-gray-500"
+                className="mt-1 block w-full border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:bg-gray-100 dark:disabled:bg-gray-700 disabled:text-gray-500 dark:disabled:text-gray-400 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
               />
             </div>
           </div>
@@ -175,38 +175,38 @@ export function ProfileForm() {
 
         {/* Professional Information */}
         <div>
-          <h4 className="text-sm font-medium text-gray-900 mb-4">Professional Information</h4>
+          <h4 className="text-sm font-medium text-gray-900 dark:text-white mb-4">Professional Information</h4>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700">Company</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Company</label>
               <input
                 type="text"
                 value={isEditing ? tempProfile.company : profile.company}
                 onChange={(e) => handleChange('company', e.target.value)}
                 disabled={!isEditing}
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:bg-gray-100 disabled:text-gray-500"
+                className="mt-1 block w-full border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:bg-gray-100 dark:disabled:bg-gray-700 disabled:text-gray-500 dark:disabled:text-gray-400 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
               />
             </div>
             
             <div>
-              <label className="block text-sm font-medium text-gray-700">Position</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Position</label>
               <input
                 type="text"
                 value={isEditing ? tempProfile.position : profile.position}
                 onChange={(e) => handleChange('position', e.target.value)}
                 disabled={!isEditing}
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:bg-gray-100 disabled:text-gray-500"
+                className="mt-1 block w-full border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:bg-gray-100 dark:disabled:bg-gray-700 disabled:text-gray-500 dark:disabled:text-gray-400 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
               />
             </div>
             
             <div>
-              <label className="block text-sm font-medium text-gray-700">Website</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Website</label>
               <input
                 type="url"
                 value={isEditing ? tempProfile.website : profile.website}
                 onChange={(e) => handleChange('website', e.target.value)}
                 disabled={!isEditing}
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:bg-gray-100 disabled:text-gray-500"
+                className="mt-1 block w-full border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:bg-gray-100 dark:disabled:bg-gray-700 disabled:text-gray-500 dark:disabled:text-gray-400 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
               />
             </div>
           </div>
@@ -214,27 +214,27 @@ export function ProfileForm() {
 
         {/* Bio */}
         <div>
-          <label className="block text-sm font-medium text-gray-700">Bio</label>
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Bio</label>
           <textarea
             rows={4}
             value={isEditing ? tempProfile.bio : profile.bio}
             onChange={(e) => handleChange('bio', e.target.value)}
             disabled={!isEditing}
-            className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:bg-gray-100 disabled:text-gray-500"
+            className="mt-1 block w-full border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:bg-gray-100 dark:disabled:bg-gray-700 disabled:text-gray-500 dark:disabled:text-gray-400 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
           />
         </div>
 
         {/* Preferences */}
         <div>
-          <h4 className="text-sm font-medium text-gray-900 mb-4">Preferences</h4>
+          <h4 className="text-sm font-medium text-gray-900 dark:text-white mb-4">Preferences</h4>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700">Timezone</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Timezone</label>
               <select
                 value={isEditing ? tempProfile.timezone : profile.timezone}
                 onChange={(e) => handleChange('timezone', e.target.value)}
                 disabled={!isEditing}
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:bg-gray-100 disabled:text-gray-500"
+                className="mt-1 block w-full border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:bg-gray-100 dark:disabled:bg-gray-700 disabled:text-gray-500 dark:disabled:text-gray-400 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
               >
                 <option value="America/Los_Angeles">Pacific Time</option>
                 <option value="America/New_York">Eastern Time</option>
@@ -245,12 +245,12 @@ export function ProfileForm() {
             </div>
             
             <div>
-              <label className="block text-sm font-medium text-gray-700">Language</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Language</label>
               <select
                 value={isEditing ? tempProfile.language : profile.language}
                 onChange={(e) => handleChange('language', e.target.value)}
                 disabled={!isEditing}
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:bg-gray-100 disabled:text-gray-500"
+                className="mt-1 block w-full border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:bg-gray-100 dark:disabled:bg-gray-700 disabled:text-gray-500 dark:disabled:text-gray-400 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
               >
                 <option value="en">English</option>
                 <option value="es">Spanish</option>

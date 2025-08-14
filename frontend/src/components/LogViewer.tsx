@@ -162,28 +162,28 @@ export function LogViewer() {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow">
-      <div className="px-6 py-4 border-b border-gray-200">
+    <div className="bg-white dark:bg-gray-800 rounded-lg shadow">
+      <div className="px-6 py-4 border-b border-gray-200 dark:border-gray-700">
         <div className="flex items-center justify-between">
-          <h3 className="text-lg font-medium text-gray-900">Process Logs</h3>
+          <h3 className="text-lg font-medium text-gray-900 dark:text-white">Process Logs</h3>
           <div className="flex items-center space-x-3">
             <button
               onClick={handleRefresh}
-              className="inline-flex items-center px-3 py-2 border border-gray-300 text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"
+              className="inline-flex items-center px-3 py-2 border border-gray-300 dark:border-gray-600 text-sm leading-4 font-medium rounded-md text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
             >
               <RefreshCw className="h-4 w-4 mr-2" />
               Refresh
             </button>
             <button
               onClick={handleDownload}
-              className="inline-flex items-center px-3 py-2 border border-gray-300 text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"
+              className="inline-flex items-center px-3 py-2 border border-gray-300 dark:border-gray-600 text-sm leading-4 font-medium rounded-md text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
             >
               <Download className="h-4 w-4 mr-2" />
               Download
             </button>
             <button
               onClick={handleClearLogs}
-              className="inline-flex items-center px-3 py-2 border border-red-300 text-sm leading-4 font-medium rounded-md text-red-700 bg-white hover:bg-red-50"
+              className="inline-flex items-center px-3 py-2 border border-red-300 dark:border-red-600 text-sm leading-4 font-medium rounded-md text-red-700 dark:text-red-300 bg-white dark:bg-gray-700 hover:bg-red-50 dark:hover:bg-gray-600"
             >
               <Trash2 className="h-4 w-4 mr-2" />
               Clear
@@ -193,18 +193,18 @@ export function LogViewer() {
       </div>
 
       {/* Filters */}
-      <div className="px-6 py-4 border-b border-gray-200 bg-gray-50">
+      <div className="px-6 py-4 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-700">
         <div className="flex flex-wrap items-center space-x-4">
           {/* Search */}
           <div className="flex-1 min-w-64">
             <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400 dark:text-gray-500" />
               <input
                 type="text"
                 placeholder="Search logs..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                className="block w-full pl-10 pr-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md leading-5 bg-white dark:bg-gray-600 placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:placeholder-gray-400 dark:focus:placeholder-gray-300 focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-gray-900 dark:text-white"
               />
             </div>
           </div>
@@ -213,7 +213,7 @@ export function LogViewer() {
           <select
             value={selectedLevel}
             onChange={(e) => setSelectedLevel(e.target.value)}
-            className="block w-32 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            className="block w-32 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm bg-white dark:bg-gray-600 text-gray-900 dark:text-white"
           >
             {logLevels.map(level => (
               <option key={level} value={level}>
@@ -226,7 +226,7 @@ export function LogViewer() {
           <select
             value={selectedProcess}
             onChange={(e) => setSelectedProcess(e.target.value)}
-            className="block w-40 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            className="block w-40 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm bg-white dark:bg-gray-600 text-gray-900 dark:text-white"
           >
             {processes.map(process => (
               <option key={process} value={process}>
@@ -241,9 +241,9 @@ export function LogViewer() {
               type="checkbox"
               checked={autoRefresh}
               onChange={(e) => setAutoRefresh(e.target.checked)}
-              className="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+              className="rounded border-gray-300 dark:border-gray-600 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
             />
-            <span className="ml-2 text-sm text-gray-700">Auto-refresh</span>
+            <span className="ml-2 text-sm text-gray-700 dark:text-gray-300">Auto-refresh</span>
           </label>
 
           {/* Show Details Toggle */}
@@ -252,34 +252,34 @@ export function LogViewer() {
               type="checkbox"
               checked={showDetails}
               onChange={(e) => setShowDetails(e.target.checked)}
-              className="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+              className="rounded border-gray-300 dark:border-gray-600 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
             />
-            <span className="ml-2 text-sm text-gray-700">Show details</span>
+            <span className="ml-2 text-sm text-gray-700 dark:text-gray-300">Show details</span>
           </label>
         </div>
       </div>
 
       {/* Logs */}
       <div className="overflow-y-auto max-h-96">
-        <div className="divide-y divide-gray-200">
+        <div className="divide-y divide-gray-200 dark:divide-gray-700">
           {filteredLogs.length > 0 ? (
             filteredLogs.map((log) => (
-              <div key={log.id} className="px-6 py-4 hover:bg-gray-50">
+              <div key={log.id} className="px-6 py-4 hover:bg-gray-50 dark:hover:bg-gray-700">
                 <div className="flex items-start space-x-3">
                   <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getLevelColor(log.level)}`}>
                     {log.level.toUpperCase()}
                   </span>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between">
-                      <p className="text-sm font-medium text-gray-900">{log.message}</p>
-                      <div className="flex items-center space-x-2 text-xs text-gray-500">
+                      <p className="text-sm font-medium text-gray-900 dark:text-white">{log.message}</p>
+                      <div className="flex items-center space-x-2 text-xs text-gray-500 dark:text-gray-400">
                         <span>{log.timestamp}</span>
-                        <span className="text-gray-300">|</span>
+                        <span className="text-gray-300 dark:text-gray-600">|</span>
                         <span>{log.process}</span>
                       </div>
                     </div>
                     {showDetails && log.details && (
-                      <p className="mt-1 text-sm text-gray-600">{log.details}</p>
+                      <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">{log.details}</p>
                     )}
                   </div>
                 </div>
@@ -287,15 +287,15 @@ export function LogViewer() {
             ))
           ) : (
             <div className="px-6 py-8 text-center">
-              <p className="text-gray-500">No logs found matching your criteria.</p>
+              <p className="text-gray-500 dark:text-gray-400">No logs found matching your criteria.</p>
             </div>
           )}
         </div>
       </div>
 
       {/* Log Count */}
-      <div className="px-6 py-3 border-t border-gray-200 bg-gray-50">
-        <p className="text-sm text-gray-500">
+      <div className="px-6 py-3 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-700">
+        <p className="text-sm text-gray-500 dark:text-gray-400">
           Showing {filteredLogs.length} of {logs.length} logs
         </p>
       </div>

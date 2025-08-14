@@ -36,21 +36,21 @@ export function DashboardSettings() {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow">
-      <div className="px-6 py-4 border-b border-gray-200">
-        <h3 className="text-lg font-medium text-gray-900">Dashboard Settings</h3>
+    <div className="bg-white dark:bg-gray-800 rounded-lg shadow">
+      <div className="px-6 py-4 border-b border-gray-200 dark:border-gray-700">
+        <h3 className="text-lg font-medium text-gray-900 dark:text-white">Dashboard Settings</h3>
       </div>
       
       <div className="p-6 space-y-6">
         {/* Layout Settings */}
         <div>
-          <h4 className="text-sm font-medium text-gray-900 mb-4 flex items-center">
+          <h4 className="text-sm font-medium text-gray-900 dark:text-white mb-4 flex items-center">
             <Layout className="h-4 w-4 mr-2" />
             Layout Preferences
           </h4>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <label className="flex items-center justify-between">
-              <span className="text-sm text-gray-700">Collapse sidebar by default</span>
+              <span className="text-sm text-gray-700 dark:text-gray-300">Collapse sidebar by default</span>
               <input
                 type="checkbox"
                 checked={dashboardSettings.layout.sidebarCollapsed}
@@ -58,12 +58,12 @@ export function DashboardSettings() {
                   ...prev,
                   layout: { ...prev.layout, sidebarCollapsed: e.target.checked }
                 }))}
-                className="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                className="rounded border-gray-300 dark:border-gray-600 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
               />
             </label>
             
             <label className="flex items-center justify-between">
-              <span className="text-sm text-gray-700">Compact mode</span>
+              <span className="text-sm text-gray-700 dark:text-gray-300">Compact mode</span>
               <input
                 type="checkbox"
                 checked={dashboardSettings.layout.compactMode}
@@ -71,12 +71,12 @@ export function DashboardSettings() {
                   ...prev,
                   layout: { ...prev.layout, compactMode: e.target.checked }
                 }))}
-                className="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                className="rounded border-gray-300 dark:border-gray-600 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
               />
             </label>
             
             <label className="flex items-center justify-between">
-              <span className="text-sm text-gray-700">Show notifications panel</span>
+              <span className="text-sm text-gray-700 dark:text-gray-300">Show notifications panel</span>
               <input
                 type="checkbox"
                 checked={dashboardSettings.layout.showNotifications}
@@ -84,7 +84,7 @@ export function DashboardSettings() {
                   ...prev,
                   layout: { ...prev.layout, showNotifications: e.target.checked }
                 }))}
-                className="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                className="rounded border-gray-300 dark:border-gray-600 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
               />
             </label>
           </div>
@@ -92,13 +92,13 @@ export function DashboardSettings() {
 
         {/* Chart Settings */}
         <div>
-          <h4 className="text-sm font-medium text-gray-900 mb-4 flex items-center">
+          <h4 className="text-sm font-medium text-gray-900 dark:text-white mb-4 flex items-center">
             <BarChart3 className="h-4 w-4 mr-2" />
             Chart Configuration
           </h4>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label htmlFor="refresh-interval" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="refresh-interval" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                 Chart refresh interval (seconds)
               </label>
               <select
@@ -108,7 +108,7 @@ export function DashboardSettings() {
                   ...prev,
                   charts: { ...prev.charts, refreshInterval: Number(e.target.value) }
                 }))}
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                className="mt-1 block w-full border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
               >
                 <option value={15}>15 seconds</option>
                 <option value={30}>30 seconds</option>
@@ -118,7 +118,7 @@ export function DashboardSettings() {
             </div>
             
             <div>
-              <label htmlFor="chart-type" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="chart-type" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                 Default chart type
               </label>
               <select
@@ -128,7 +128,7 @@ export function DashboardSettings() {
                   ...prev,
                   charts: { ...prev.charts, chartType: e.target.value }
                 }))}
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                className="mt-1 block w-full border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
               >
                 <option value="line">Line Chart</option>
                 <option value="area">Area Chart</option>
@@ -138,7 +138,7 @@ export function DashboardSettings() {
             </div>
             
             <label className="flex items-center justify-between">
-              <span className="text-sm text-gray-700">Show chart grid</span>
+              <span className="text-sm text-gray-700 dark:text-gray-300">Show chart grid</span>
               <input
                 type="checkbox"
                 checked={dashboardSettings.charts.showGrid}
@@ -146,12 +146,12 @@ export function DashboardSettings() {
                   ...prev,
                   charts: { ...prev.charts, showGrid: e.target.checked }
                 }))}
-                className="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                className="rounded border-gray-300 dark:border-gray-600 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
               />
             </label>
             
             <label className="flex items-center justify-between">
-              <span className="text-sm text-gray-700">Show tooltips</span>
+              <span className="text-sm text-gray-700 dark:text-gray-300">Show tooltips</span>
               <input
                 type="checkbox"
                 checked={dashboardSettings.charts.showTooltips}
@@ -159,7 +159,7 @@ export function DashboardSettings() {
                   ...prev,
                   charts: { ...prev.charts, showTooltips: e.target.checked }
                 }))}
-                className="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                className="rounded border-gray-300 dark:border-gray-600 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
               />
             </label>
           </div>
@@ -167,13 +167,13 @@ export function DashboardSettings() {
 
         {/* Monitoring Settings */}
         <div>
-          <h4 className="text-sm font-medium text-gray-900 mb-4 flex items-center">
+          <h4 className="text-sm font-medium text-gray-900 dark:text-white mb-4 flex items-center">
             <Clock className="h-4 w-4 mr-2" />
             Monitoring Preferences
           </h4>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label htmlFor="refresh-rate" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="refresh-rate" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                 Data refresh rate (ms)
               </label>
               <select
@@ -183,7 +183,7 @@ export function DashboardSettings() {
                   ...prev,
                   monitoring: { ...prev.monitoring, refreshRate: Number(e.target.value) }
                 }))}
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                className="mt-1 block w-full border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
               >
                 <option value={1000}>1 second</option>
                 <option value={5000}>5 seconds</option>
@@ -193,7 +193,7 @@ export function DashboardSettings() {
             </div>
             
             <div>
-              <label htmlFor="max-data-points" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="max-data-points" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                 Max data points per chart
               </label>
               <select
@@ -203,7 +203,7 @@ export function DashboardSettings() {
                   ...prev,
                   monitoring: { ...prev.monitoring, maxDataPoints: Number(e.target.value) }
                 }))}
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                className="mt-1 block w-full border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
               >
                 <option value={50}>50 points</option>
                 <option value={100}>100 points</option>
@@ -213,7 +213,7 @@ export function DashboardSettings() {
             </div>
             
             <label className="flex items-center justify-between">
-              <span className="text-sm text-gray-700">Auto-refresh data</span>
+              <span className="text-sm text-gray-700 dark:text-gray-300">Auto-refresh data</span>
               <input
                 type="checkbox"
                 checked={dashboardSettings.monitoring.autoRefresh}
@@ -221,12 +221,12 @@ export function DashboardSettings() {
                   ...prev,
                   monitoring: { ...prev.monitoring, autoRefresh: e.target.checked }
                 }))}
-                className="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                className="rounded border-gray-300 dark:border-gray-600 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
               />
             </label>
             
             <label className="flex items-center justify-between">
-              <span className="text-sm text-gray-700">Show real-time updates</span>
+              <span className="text-sm text-gray-700 dark:text-gray-300">Show real-time updates</span>
               <input
                 type="checkbox"
                 checked={dashboardSettings.monitoring.showRealTime}
@@ -234,7 +234,7 @@ export function DashboardSettings() {
                   ...prev,
                   monitoring: { ...prev.monitoring, showRealTime: e.target.checked }
                 }))}
-                className="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                className="rounded border-gray-300 dark:border-gray-600 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
               />
             </label>
           </div>
@@ -242,13 +242,13 @@ export function DashboardSettings() {
 
         {/* Display Settings */}
         <div>
-          <h4 className="text-sm font-medium text-gray-900 mb-4 flex items-center">
+          <h4 className="text-sm font-medium text-gray-900 dark:text-white mb-4 flex items-center">
             <Eye className="h-4 w-4 mr-2" />
             Display Options
           </h4>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <label className="flex items-center justify-between">
-              <span className="text-sm text-gray-700">Show process details</span>
+              <span className="text-sm text-gray-700 dark:text-gray-300">Show process details</span>
               <input
                 type="checkbox"
                 checked={dashboardSettings.display.showProcessDetails}
@@ -256,12 +256,12 @@ export function DashboardSettings() {
                   ...prev,
                   display: { ...prev.display, showProcessDetails: e.target.checked }
                 }))}
-                className="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                className="rounded border-gray-300 dark:border-gray-600 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
               />
             </label>
             
             <label className="flex items-center justify-between">
-              <span className="text-sm text-gray-700">Show system metrics</span>
+              <span className="text-sm text-gray-700 dark:text-gray-300">Show system metrics</span>
               <input
                 type="checkbox"
                 checked={dashboardSettings.display.showSystemMetrics}
@@ -269,12 +269,12 @@ export function DashboardSettings() {
                   ...prev,
                   display: { ...prev.display, showSystemMetrics: e.target.checked }
                 }))}
-                className="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                className="rounded border-gray-300 dark:border-gray-600 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
               />
             </label>
             
             <label className="flex items-center justify-between">
-              <span className="text-sm text-gray-700">Show performance charts</span>
+              <span className="text-sm text-gray-700 dark:text-gray-300">Show performance charts</span>
               <input
                 type="checkbox"
                 checked={dashboardSettings.display.showPerformanceCharts}
@@ -282,12 +282,12 @@ export function DashboardSettings() {
                   ...prev,
                   display: { ...prev.display, showPerformanceCharts: e.target.checked }
                 }))}
-                className="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                className="rounded border-gray-300 dark:border-gray-600 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
               />
             </label>
             
             <label className="flex items-center justify-between">
-              <span className="text-sm text-gray-700">Show logs panel</span>
+              <span className="text-sm text-gray-700 dark:text-gray-300">Show logs panel</span>
               <input
                 type="checkbox"
                 checked={dashboardSettings.display.showLogs}
@@ -295,17 +295,17 @@ export function DashboardSettings() {
                   ...prev,
                   display: { ...prev.display, showLogs: e.target.checked }
                 }))}
-                className="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                className="rounded border-gray-300 dark:border-gray-600 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
               />
             </label>
           </div>
         </div>
 
         {/* Save Button */}
-        <div className="pt-4 border-t border-gray-200">
+        <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
           <button
             onClick={handleSave}
-            className="w-full px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            className="w-full px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
           >
             Save Dashboard Settings
           </button>

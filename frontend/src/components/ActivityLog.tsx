@@ -113,10 +113,10 @@ export function ActivityLog() {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow">
-      <div className="px-6 py-4 border-b border-gray-200">
-        <h3 className="text-lg font-medium text-gray-900">Activity Log</h3>
-        <p className="text-sm text-gray-500">Recent account activity and security events</p>
+    <div className="bg-white dark:bg-gray-800 rounded-lg shadow">
+      <div className="px-6 py-4 border-b border-gray-200 dark:border-gray-700">
+        <h3 className="text-lg font-medium text-gray-900 dark:text-white">Activity Log</h3>
+        <p className="text-sm text-gray-500 dark:text-gray-400">Recent account activity and security events</p>
       </div>
       
       <div className="p-6">
@@ -126,30 +126,30 @@ export function ActivityLog() {
               key={activity.id}
               className={`p-4 border rounded-lg cursor-pointer transition-colors ${
                 selectedActivity === activity.id
-                  ? 'border-indigo-300 bg-indigo-50'
-                  : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50'
+                  ? 'border-indigo-300 dark:border-indigo-600 bg-indigo-50 dark:bg-indigo-900/20'
+                  : 'border-gray-200 dark:border-gray-600 hover:border-gray-300 dark:hover:border-gray-500 hover:bg-gray-50 dark:hover:bg-gray-700'
               }`}
               onClick={() => setSelectedActivity(selectedActivity === activity.id ? null : activity.id)}
             >
               <div className="flex items-start space-x-3">
-                <div className={`flex-shrink-0 w-8 h-8 rounded-full ${activity.bgColor} flex items-center justify-center`}>
+                <div className={`flex-shrink-0 w-8 h-8 rounded-full ${activity.bgColor} dark:bg-opacity-20 flex items-center justify-center`}>
                   <activity.icon className={`h-4 w-4 ${activity.color}`} />
                 </div>
                 
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center justify-between">
-                    <p className="text-sm font-medium text-gray-900">
+                    <p className="text-sm font-medium text-gray-900 dark:text-white">
                       {getActivityTypeLabel(activity.type)}
                     </p>
-                    <div className="flex items-center space-x-2 text-xs text-gray-500">
+                    <div className="flex items-center space-x-2 text-xs text-gray-500 dark:text-gray-400">
                       <Clock className="h-3 w-3" />
                       <span>{formatTimestamp(activity.timestamp)}</span>
                     </div>
                   </div>
                   
-                  <p className="mt-1 text-sm text-gray-600">{activity.description}</p>
+                  <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">{activity.description}</p>
                   
-                  <div className="mt-2 flex items-center space-x-4 text-xs text-gray-500">
+                  <div className="mt-2 flex items-center space-x-4 text-xs text-gray-500 dark:text-gray-400">
                     <div className="flex items-center space-x-1">
                       <MapPin className="h-3 w-3" />
                       <span>{activity.location}</span>
@@ -161,23 +161,23 @@ export function ActivityLog() {
                   </div>
                   
                   {selectedActivity === activity.id && (
-                    <div className="mt-3 pt-3 border-t border-gray-200">
+                    <div className="mt-3 pt-3 border-t border-gray-200 dark:border-gray-600">
                       <div className="grid grid-cols-2 gap-4 text-xs">
                         <div>
-                          <span className="font-medium text-gray-700">IP Address:</span>
-                          <span className="ml-2 text-gray-600">{activity.ip}</span>
+                          <span className="font-medium text-gray-700 dark:text-gray-300">IP Address:</span>
+                          <span className="ml-2 text-gray-600 dark:text-gray-400">{activity.ip}</span>
                         </div>
                         <div>
-                          <span className="font-medium text-gray-700">Full Timestamp:</span>
-                          <span className="ml-2 text-gray-600">{activity.timestamp}</span>
+                          <span className="font-medium text-gray-700 dark:text-gray-300">Full Timestamp:</span>
+                          <span className="ml-2 text-gray-600 dark:text-gray-400">{activity.timestamp}</span>
                         </div>
                         <div>
-                          <span className="font-medium text-gray-700">Location:</span>
-                          <span className="ml-2 text-gray-600">{activity.location}</span>
+                          <span className="font-medium text-gray-700 dark:text-gray-300">Location:</span>
+                          <span className="ml-2 text-gray-600 dark:text-gray-400">{activity.location}</span>
                         </div>
                         <div>
-                          <span className="font-medium text-gray-700">Device:</span>
-                          <span className="ml-2 text-gray-600">{activity.device}</span>
+                          <span className="font-medium text-gray-700 dark:text-gray-300">Device:</span>
+                          <span className="ml-2 text-gray-600 dark:text-gray-400">{activity.device}</span>
                         </div>
                       </div>
                     </div>
@@ -190,15 +190,15 @@ export function ActivityLog() {
         
         {activities.length === 0 && (
           <div className="text-center py-8">
-            <Clock className="mx-auto h-12 w-12 text-gray-400" />
-            <h3 className="mt-2 text-sm font-medium text-gray-900">No activity</h3>
-            <p className="mt-1 text-sm text-gray-500">No recent activity to display.</p>
+            <Clock className="mx-auto h-12 w-12 text-gray-400 dark:text-gray-500" />
+            <h3 className="mt-2 text-sm font-medium text-gray-900 dark:text-white">No activity</h3>
+            <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">No recent activity to display.</p>
           </div>
         )}
         
         {activities.length > 0 && (
-          <div className="mt-6 pt-4 border-t border-gray-200">
-            <button className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          <div className="mt-6 pt-4 border-t border-gray-200 dark:border-gray-700">
+            <button className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm text-sm font-medium text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">
               View All Activity
             </button>
           </div>
